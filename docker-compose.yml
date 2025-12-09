@@ -1,0 +1,19 @@
+name: csbot
+
+services:
+  csbot:
+    build: ./csbot
+    volumes:
+      - csbot:/usr/src/csbot
+      - csbot_data:/home/.csbot
+    restart: always
+    environment:
+      - ENV_FILE=/run/secrets/csbot_env
+    secrets:
+      - csbot_env
+volumes:
+  csbot:
+  csbot_data:
+secrets:
+  csbot_env:
+    file: .env

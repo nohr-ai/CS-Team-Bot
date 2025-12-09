@@ -1,4 +1,0 @@
-pytube
-discord
-dadjokes
-openai
